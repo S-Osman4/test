@@ -1919,3 +1919,7 @@ p {
   background-color: var(--primary-dark);
   color: var(--primary);
 }
+.footer-eleven .f-schedule p{
+  color: var(--dark-3);
+  margin-top: 20px;
+}
