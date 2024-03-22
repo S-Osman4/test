@@ -78,12 +78,11 @@ const subjectError = document.querySelector('#subject-error');
 const messageError = document.querySelector('#message-error');
 
 function validateInput(inputElement, errorElement, validationFunction, errorMessage) {
-  inputElement.addEventListener("keyup", function (event) {
-    // Example: Check if only letters and spaces are entered for name
-    if (validationFunction(inputElement) && /^[a-zA-Z\s]+$/.test(event.key)) {
-      errorElement.textContent = '';
+  inputElement.addEventListener("input", function (event) {
+    if (validationFunction(inputElement)) {
+      errorElement.textContent = ''; // Clear error on valid input
     } else {
-      errorElement.textContent = errorMessage;
+      errorElement.textContent = errorMessage; // Display error on invalid input
     }
   });
 }
