@@ -78,8 +78,9 @@ const subjectError = document.querySelector('#subject-error');
 const messageError = document.querySelector('#message-error');
 
 function validateInput(inputElement, errorElement, validationFunction, errorMessage) {
-  inputElement.addEventListener("input", function (event) {
-    if (validationFunction(inputElement)) {
+  inputElement.addEventListener("keyup", function (event) {
+    // Example: Check if only letters and spaces are entered for name
+    if (validationFunction(inputElement) && /^[a-zA-Z\s]+$/.test(event.key)) {
       errorElement.textContent = '';
     } else {
       errorElement.textContent = errorMessage;
